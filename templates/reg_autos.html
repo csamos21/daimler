@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+    <div class="v53_404"></div> 
+    <main>
+        <div>
+            <div id="contacto" class="contacto">
+                <h2>INGRESAR AUTOS</h2>
+                <div>
+                    {% from "_macro.html" import render_field %}
+                    <form class="formulario" name="AutosForm" method="POST" action="{{ url_for('reg_autos') }}">
+                        <legend>Favor llenar todos los campos</legend>
+                        <div class="contenedor-campos">
+                            <div class="campo">
+                                {{ render_field(form.cod_aut) }}
+                            </div>
+                            <div class="campo">
+                                {{ render_field(form.name_aut) }}
+                            </div>
+                            <div class="campo">
+                                {{ render_field(form.Desc_aut) }}
+                            </div>
+                            <div class="campo">
+                                {{ render_field(form.mod_aut) }}
+                            </div>
+                            <div class="campo">
+                                {{ render_field(form.id_fab) }}
+                            </div>
+                            <div class="campo">
+                                {{ render_field(form.lin_aut) }}
+                            </div>
+                            <div class="campo">
+                                {{ render_field(form.est_aut) }}
+                            </div>
+                            <div class="campo">
+                                {{ render_field(form.fec_sist) }}
+                            </div>
+                            <div class="campo">
+                                {{ render_field(form.cod_user) }}
+                            </div>
+                        </div>
+                        <div class="enviar">
+                            <input type="submit" value="Aceptar" class="boton">
+                            <input type="submit" value="Cancelar" class="boton" action="/cancelar">
+                        </div>    
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>    
+{% endblock %}

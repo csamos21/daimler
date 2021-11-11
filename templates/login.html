@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+    <div class="bg_app servicios">
+        <div class="logo_intro">
+            <div class="content-daimler">
+                {% if sesion_iniciada[0] %}
+                    <h2 class="titulo">SISTEMA DE INVENTARIO</h2>
+                    <h3> Bienvenido </h3>            
+                {%else%}
+                    <h2 class="titulo">ENTRADA AL SISTEMA</h2>
+                {%endif%}
+                <p>Barranquilla, Atlántico</p>
+                <a href="#">Contactar</a>        
+            </div>
+        </div>
+        <div class="logo_inicio"></div>
+        <section class="servicio">
+            <h2>INGRESAR</h2>
+            <div class="formulario">
+
+                {% from "_macro.html" import render_field %}
+
+                <!-- <form action="/login" method="POST"> -->
+                <form name="LoginForm" method="POST">
+                    {{csrf_token}}
+
+                    <div>
+                        {{ render_field(form.usuario) }}
+                    </div>
+    
+                    <div>
+                        {{ render_field(form.password) }}
+                    </div>
+    
+                    <input type="submit" value="Aceptar" class="boton" formaction="{{ url_for('login') }}"">
+                    <input type="submit" value="Cancelar" class="boton" formaction="{{ url_for('cancelar') }}">
+                </form>
+            </div>
+        </section>
+    </div>
+{% endblock %}

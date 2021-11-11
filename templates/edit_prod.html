@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block cont_menu %}
+<div class="form_menu">     
+    <h2>Edicion PRODUCTOS</h2> 
+    {% for productos in productos %}
+        {% from "_macro.html" import r_field %}
+        <form class="formulario" name="ProductosForm" method="POST">
+            <legend>Favor llenar todos los campos</legend>
+            <div class="contenedor-campos">
+                <div class="campo">
+                    {{ r_field(form.cod_prod) }}
+                    <input type="text" value={{productos[1]}} name="cod_prod" id="cod_prod">
+                </div>                
+                <div class="campo">
+                    {{ r_field(form.name_prod) }}
+                    <input type="text" value={{productos[2]}} name="name_prod" id="name_prod">
+                </div>
+                <div class="campo">
+                    {{ r_field(form.desc_prod) }}
+                    <input type="text" value={{productos[3]}} name="desc_prod" id="desc_prod">
+                </div>
+                <div class="campo">
+                    {{ r_field(form.cant_min_req) }}
+                    <input type="text" value={{productos[4]}} name="cant_min_req" id="cant_min_req">
+                </div>
+                <div class="campo">
+                    {{ r_field(form.cant_disp) }}
+                    <input type="text" value={{productos[5]}} name="cant_disp" id="cant_disp">
+                </div>
+            </div>
+            <div class="enviar">
+                <input type="submit" value="Aceptar" class="boton" formaction="/edit_prod/{{productos[0]}}">
+            </div>    
+        </form>    
+    {% endfor %}        
+</div>
+{% endblock %} 

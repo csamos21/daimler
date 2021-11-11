@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block cont_menu %}
+    <div>
+        <div id="contacto" class="form_menu">
+            <h2>INGRESAR PRODUCTOS</h2>
+            {% from "_macro.html" import render_field %}
+            <form class="formulario" name="ProductosForm" method="POST">
+                <legend>Favor llenar todos los campos</legend>
+                <div class="contenedor-campos">
+                    <div class="campo">
+                        {{ render_field(form.cod_prod) }}
+                    </div>
+                    <div class="campo">
+                        {{ render_field(form.name_prod) }}
+                    </div>
+                    <div class="campo">
+                        {{ render_field(form.desc_prod) }}
+                    </div>
+                    <div class="campo">
+                        {{ render_field(form.cant_min_req) }}
+                    </div>
+                    <div class="campo">
+                        {{ render_field(form.cant_disp) }}
+                    </div>
+                </div>
+                <div class="enviar">
+                    <input type="submit" value="Aceptar" class="boton" formaction="{{ url_for('reg_producto') }}">
+                    <input type="submit" value="Cancelar" class="boton" formnovalidate formaction="{{ url_for('inicio') }}">
+                </div>    
+            </form>
+        </div>
+    </div>
+{% endblock %}

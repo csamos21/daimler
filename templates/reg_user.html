@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block cont_menu %}
+    <div>
+        <div id="contacto" class="form_menu">
+            <h2>REGISTRO DE USUARIOS</h2>
+            {% from "_macro.html" import render_field %}
+            <form class="formulario" name="RegistroUsuario" method="POST">
+                <legend>Favor diligenciar todos los campos</legend>
+                <div class="contenedor-campos">
+                    <div class="campo">
+                        {{ render_field(form.cod_usuario) }}
+                    </div>
+                    <div class="campo">
+                        {{ render_field(form.nombre_usuario) }}
+                    </div>
+                    <div class="campo">
+                        {{ render_field(form.email_usuario) }}
+                    </div>
+                    <div class="campo">
+                        {{ render_field(form.cargo) }}
+                    </div>
+                    <div class="campo">
+                        {{ render_field(form.foto) }}
+                    </div>
+                    <div class="campo">
+                        {{ render_field(form.codigo_rol) }}
+                    </div>
+                    <div class="campo">
+                        {{ render_field(form.password) }}
+                    </div>
+                    <div class="campo">
+                        {{ render_field(form.codigo_pais) }}
+                    </div>
+                    <div class="campo">
+                        {{ render_field(form.direccion) }}
+                    </div>
+                    <div class="campo">
+                        {{ render_field(form.telefono) }}
+                    </div>
+                    <div class="campo">
+                        {{ render_field(form.celular) }}
+                    </div>
+                    <div class="campo">
+                        {{ render_field(form.ciudad) }}
+                    </div>
+                </div>
+                <div class="enviar">
+                    <input type="submit" value="Aceptar" class="boton" formaction="{{ url_for('reg_users') }}">
+                    <input type="submit" value="Cancelar" class="boton" formnovalidate formaction="{{ url_for('inicio') }}">
+                </div>    
+            </form>
+        </div>
+    </div>
+{% endblock %}

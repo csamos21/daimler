@@ -1,0 +1,237 @@
+.lds-ripple {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+
+.lds-ripple div {
+    position: absolute;
+    border: 4px solid #fff;
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  }
+
+.lds-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+  }
+
+@keyframes lds-ripple {
+    0% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 1;
+    }
+    
+    100% {
+      top: 0px;
+      left: 0px;
+      width: 72px;
+      height: 72px;
+      opacity: 0;
+    }
+}
+
+.coln { 
+    background-color: aqua;
+}
+
+.ccen {
+    text-align: center;
+}
+
+.nav_user{
+    text-align: right;
+    width: 100%;
+    height:2rem;
+}
+
+.nav{
+    width: 300px;
+}
+
+.nav__link{
+    color: #303440;
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+}
+
+.nav__link--inside{
+    border-radius: 6px ;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.nav__link--inside:hover{
+    background: #F6F8FA;
+}
+
+.list{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 0 16px 16px 0;
+    background: #fff;
+}
+
+.list__item{
+    list-style: none;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.list__item--click{
+    cursor: pointer;
+}
+
+.list__button{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.arrow .list__arrow{
+    transform: rotate(90deg);
+}
+
+.list__arrow{
+    margin-left: auto;
+    transition: transform .3s;
+}
+
+.list__show{
+    width: 80%;
+    margin-left: auto;
+    border-left: 2px solid #303440;
+    list-style: none;
+    transition: height .4s;
+    height: 0;
+}
+
+.logo_daimler {
+    width: 271px;
+    height: 132px;
+    opacity: 1;
+    position: absolute;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+.cont-crud{
+      width:100%;
+      padding-right:15px;
+      padding-left:15px;
+      margin-right:auto;
+      margin-left:auto
+    }
+    
+.row{
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-wrap:wrap;
+    flex-wrap:wrap;
+    margin-right:-15px;
+    margin-left:-15px
+}
+.col,.col-1,.col-md-12,.col-auto,.col-xl-auto{
+    position:relative;
+    width:100%;
+    min-height:1px;
+    padding-right:15px;
+    padding-left:15px
+}
+
+.col{
+    -ms-flex-preferred-size:0;
+    flex-basis:0;
+    -ms-flex-positive:1;
+    flex-grow:1;
+    max-width:100%
+}
+
+.col-auto{
+    -ms-flex:0 0 auto;
+    flex:0 0 auto;
+    width:auto;
+    max-width:none}
+    
+.col-1{
+    -ms-flex:0 0 8.333333%;
+    flex:0 0 8.333333%;
+    max-width:8.333333%
+}
+
+.float-right{float:right!important}
+.float-none{float:none!important}
+
+@media (min-width:576px){
+    .float-sm-left{float:left!important}
+    .float-sm-right{float:right!important}
+    .float-sm-none{float:none!important}
+}
+    
+@media (min-width:768px){
+    .float-md-left{float:left!important}
+    .float-md-right{float:right!important}
+    .float-md-none{float:none!important}
+}
+
+@media (min-width:992px){
+    .float-lg-left{float:left!important}
+    .float-lg-right{float:right!important}
+    .float-lg-none{float:none!important}
+}
+
+@media (min-width:1200px){
+    .float-xl-left{float:left!important}
+    .float-xl-right{float:right!important}
+    .float-xl-none{float:none!important}
+}
+    
+.position-static{position:static!important}
+.position-relative{position:relative!important}
+.position-absolute{position:absolute!important}
+
+.table-bordered{
+    border:1px solid #dee2e6
+}
+
+.table-bordered td,.table-bordered th{
+    border:1px solid #dee2e6
+}
+
+.table-bordered thead td,.table-bordered thead th{
+    border-bottom-width:2px
+}
+
+.card{
+    position:relative;
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-direction:column;
+    flex-direction:column;
+    min-width:0;
+    word-wrap:break-word;
+    background-color:#fff;
+    background-clip:border-box;
+    border:1px 
+    solid rgba(0,0,0,.125);
+    border-radius:.25rem
+}
+
+.card-body{
+    -ms-flex:1 1 auto;
+    flex:1 1 auto;
+    padding:1.25rem
+}
+
+.pb-2,.py-2{padding-bottom:.5rem!important}

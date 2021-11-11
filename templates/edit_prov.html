@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block cont_menu %}
+<div class="form_menu">     
+    <h2>EDICION PROVEEDORES</h2> 
+    {% for proveedor in proveedor %}
+        {% from "_macro.html" import r_field %}
+        <form class="formulario" name="ProveedoresForm" method="POST">
+            <legend>Favor llenar todos los campos</legend>
+            <div class="contenedor-campos">
+                <div class="campo">
+                    {{ r_field(form.cod_prov) }}
+                    <input type="text" value={{proveedor[1]}} name="cod_prov" id="cod_prov">
+                </div>
+                <div class="campo">
+                    {{ r_field(form.tipoid_prov) }}
+                    <select name="tipoid_prov" id="tipoid_prov" selected value={{proveedor[2]}}>
+                        <!-- Opciones de la lista -->
+                        <option value="CC">CC</option>
+                        <option value="NUIP" selected>NUIP</option> <!-- Opción por defecto -->
+                        <option value="CE">CE</option>
+                        <option value="NIT">NIT</option>
+                      </select>
+                    <!-- <input type="text" value={{proveedor[2]}} name="tipoid_prov" id="tipoid_prov"> -->
+                </div>
+                <div class="campo">
+                    {{ r_field(form.nroid_prov) }}
+                    <input type="text" value={{proveedor[3]}} name="nroid_prov" id="nroid_prov">
+                </div>
+                <div class="campo">
+                    {{ r_field(form.dv_nroid_prov) }}
+                    <input type="text" value={{proveedor[4]}} name="dv_nroid_prov" id="dv_nroid_prov">
+                </div>
+                <div class="campo">
+                    {{ r_field(form.rsocial_prov) }}
+                    <input type="text" value={{proveedor[5]}} name="rsocial_prov" id="rsocial_prov">
+                </div>
+                <div class="campo">
+                    {{ r_field(form.name_rep_prov) }}
+                    <input type="text" value={{proveedor[6]}} name="name_rep_prov" id="name_rep_prov">
+                </div>
+                <div class="campo">
+                    {{ r_field(form.name_con_prov) }}
+                    <input type="text" value={{proveedor[7]}} name="name_con_prov" id="name_con_prov">
+                </div>
+                <div class="campo">
+                    {{ r_field(form.email_prov) }}
+                    <input type="email" value={{proveedor[8]}} name="email_prov" id="email_prov">
+                </div>
+                <div class="campo">
+                    {{ r_field(form.codigo_pais) }}
+                    <input type="text" value={{proveedor[9]}} name="codigo_pais" id="codigo_pais">
+                </div>
+                <div class="campo">
+                    {{ r_field(form.ciudad) }}
+                    <input type="text" value={{proveedor[10]}} name="ciudad" id="ciudad">
+                </div>
+                <div class="campo">
+                    {{ r_field(form.direccion) }}
+                    <input type="text" value={{proveedor[11]}} name="direccion" id="direccion">
+                </div>
+                <div class="campo">
+                    {{ r_field(form.telefono) }}
+                    <input type="text" value={{proveedor[12]}} name="telefono" id="telefono">
+                </div>
+                <div class="campo">
+                    {{ r_field(form.celular) }}
+                    <input type="text" value={{proveedor[13]}} name="celular" id="celular">
+                </div>
+            </div>
+            <div class="enviar">
+                <input type="submit" value="Aceptar" class="boton" formaction="/edit_prov/{{proveedor[0]}}">
+            </div>    
+        </form>    
+    {% endfor %}        
+</div>
+{% endblock %} 

@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block cont_menu %}
+<div class="form_menu">     
+    <h2>INFORMACION FABRICANTES</h2> 
+    {% for fabricantes in fabricantes %}
+        {% from "_macro.html" import r_field %}
+        <form class="formulario" name="EditFabForm" method="POST">
+            <legend>Favor llenar todos los campos</legend>
+            <div class="contenedor-campos">
+                <div class="campo">
+                    {{ r_field(form.id_fab) }}
+                    <input type="text" value={{fabricantes[0]}} name="id_fab" id="id_fab">
+                </div>                
+                <div class="campo">
+                    {{ r_field(form.cod_fab) }}
+                    <input type="text" value={{fabricantes[1]}} name="cod_fab" id="cod_fab">
+                </div>
+                <div class="campo">
+                    {{ r_field(form.tipoid_fab) }}
+                    <select name="tipoid_fab" id="tipoid_fab" selected value={{fabricantes[2]}}>
+                        <!-- Opciones de la lista -->
+                        <option value="CC">CC</option>
+                        <option value="NUIP" selected>NUIP</option> <!-- Opción por defecto -->
+                        <option value="CE">CE</option>
+                        <option value="NIT">NIT</option>
+                      </select>
+                    <!-- <input type="text" value={{fabricantes[2]}} name="tipoid_fab" id="tipoid_fab"> -->
+                </div>
+                <div class="campo">
+                    {{ r_field(form.nroid_fab) }}
+                    <input type="text" value={{fabricantes[3]}} name="nroid_fab" id="nroid_fab">
+                </div>
+                <div class="campo">
+                    {{ r_field(form.dv_nroid_fab) }}
+                    <input type="text" value={{fabricantes[4]}} name="dv_nroid_fab" id="dv_nroid_fab">
+                </div>
+                <div class="campo">
+                    {{ r_field(form.rsocial_fab) }}
+                    <input type="text" value={{fabricantes[5]}} name="rsocial_fab" id="rsocial_fab">
+                </div>
+                <div class="campo">
+                    {{ r_field(form.name_rep_fab) }}
+                    <input type="text" value={{fabricantes[6]}} name="name_rep_fab" id="name_rep_fab">
+                </div>
+                <div class="campo">
+                    {{ r_field(form.name_con_fab) }}
+                    <input type="text" value={{fabricantes[7]}} name="name_con_fab" id="name_con_fab">
+                </div>
+                <div class="campo">
+                    {{ r_field(form.email_fab) }}
+                    <input type="email" value={{fabricantes[8]}} name="email_fab" id="email_fab">
+                </div>
+                <div class="campo">
+                    {{ r_field(form.codigo_pais) }}
+                    <input type="text" value={{fabricantes[9]}} name="codigo_pais" id="codigo_pais">
+                </div>
+                <div class="campo">
+                    {{ r_field(form.ciudad) }}
+                    <input type="text" value={{fabricantes[10]}} name="ciudad" id="ciudad">
+                </div>
+                <div class="campo">
+                    {{ r_field(form.direccion) }}
+                    <input type="text" value={{fabricantes[11]}} name="direccion" id="direccion">
+                </div>
+                <div class="campo">
+                    {{ r_field(form.telefono) }}
+                    <input type="text" value={{fabricantes[12]}} name="telefono" id="telefono">
+                </div>
+                <div class="campo">
+                    {{ r_field(form.celular) }}
+                    <input type="text" value={{fabricantes[13]}} name="celular" id="celular">
+                </div>
+            </div>
+            <div class="enviar">
+                <input type="submit" value="Aceptar" class="boton" formaction="/edit_fab/{{fabricantes[0]}}">
+            </div>    
+        </form>    
+    {% endfor %}        
+</div>
+{% endblock %}    

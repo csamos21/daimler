@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block cont_menu %}
+<body>
+  <div class="form_menu">     
+      <h2>INFORMACION PROVEEDORES</h2>   
+    <table id="prov" class="table table-striped table-inverse table-responsive" style="width:100%;zoom:85%">
+        <thead class="thead-inverse">
+            <tr>
+              <th>#Id</th>
+              <th>T.Id</th>                                        
+              <th>Nro. Id</th>
+              <th>Razon Social</th>
+              <th>Correo</th>
+              <th>Telefóno</th>
+              <th>Celular</th>
+              <th>Ciudad</th>
+              <th>Dirección</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+                {%for proveedor in proveedor %}
+                <tr>
+                    <td>{{proveedor[0]}} </td>
+                    <td>{{proveedor[2]}} </td>                                    
+                    <td>{{proveedor[3]}} </td>                  
+                    <td>{{proveedor[5]}} </td>                                    
+                    <td>{{proveedor[8]}} </td>                                    
+                    <td>{{proveedor[12]}} </td>                  
+                    <td>{{proveedor[13]}} </td>
+                    <td>{{proveedor[10]}} </td>                                    
+                    <td>{{proveedor[11]}} </td>
+                    <td>{{proveedor[14]}} </td>
+                    {% if sesion_iniciada[2] != "USER" %}
+                      <td> <a href="/edit_prov/{{proveedor[0]}}">Editar</a> | <a href="/del_prov/{{proveedor[0]}}">Borrar</a></td>
+                    {% else %}
+                      <td>Solo Mostrar</td>
+                    {% endif %}
+                </tr>
+                {%endfor %}
+            </tbody>
+    </table>  
+  </div>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"></script>
+    <script src="https://getbootstrap.com/docs/4.1/dist/js/bootstrap.min.js"></script>
+    <!-- DataTables -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <!-- Botones Datatable -->
+    <script src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.print.min.js"></script>       
+</body>    
+
+<script>
+$(document).ready(function() {
+  $('#prov').DataTable({
+    "paging": true,
+    "lengthChange": false,
+    "pageLength": 10,
+    "searching": true,
+    "ordering": true,
+    "info": true,
+    "autoWidth": false,
+    "responsive": false,
+    "language": {
+          "search": "Buscar:",
+          "lengthMenu": "Mostrar _MENU_ Registros por página",
+          "zeroRecords": "No hay coincidencias en la búsqueda",
+          "info": "Mostrando página _PAGE_ de _PAGES_",
+          "infoEmpty": "Sin registros disponibles",
+          "infoFiltered": "(filtrado de _MAX_ registros total)"
+      },
+
+      dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+} );
+
+</script>
+{% endblock %}

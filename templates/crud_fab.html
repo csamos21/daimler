@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block cont_menu %}
+    <div class="cont-crud">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-primary">
+                    <div class="card-body rounded shadow-sm">
+                        <div class="col-md-12">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Administración de Usuarios</h5><br>
+                            <div class="float-right">
+                                <button type="button" data-toggle="modal" data-target="#crear" class="btn btn-success btn-sm">+ Agregar</button>
+                            </div>
+                            <p class="small lh-125"></p>
+                            <table id="usuarios" class="table table-striped table-bordered display compact" style="width:100%;zoom:75%">
+                                <thead>
+                                    <tr>
+                                        <th>#Id</th>
+                                        <th>T.Id</th>                                        
+                                        <th>Nro. Id</th>
+                                        <th>Razon Social</th>
+                                        <th>Representante</th>
+                                        <th>Correo</th>
+                                        <th>Telefóno</th>
+                                        <th>Celular</th>
+                                        <th>Ciudad</th>
+                                        <th>Dirección</th>
+                                        <th>Estado</th>
+                                        <th>Edit.Usuario</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php do { ?>
+                                    <tr>
+                                        <td id="idUsuario<?php echo $row_AdminUsuario['id_usuario'];?>"><?=$row_AdminUsuario['id_usuario']?></td>
+                                        <td id="documento<?php echo $row_AdminUsuario['id_usuario'];?>"><?=$row_AdminUsuario['documento']?></td>
+                                        <td id="nombre<?php echo $row_AdminUsuario['id_usuario'];?>"><?=$row_AdminUsuario['nombre']?></td>
+                                        <td id="apellido<?php echo $row_AdminUsuario['id_usuario'];?>"><?=$row_AdminUsuario['apellido']?></td>
+                                        <td id="correo<?php echo $row_AdminUsuario['id_usuario'];?>"><?=$row_AdminUsuario['correo']?></td>
+                                        <td id="telefono1<?php echo $row_AdminUsuario['id_usuario'];?>"><?=$row_AdminUsuario['telefono1']?></td>
+                                        <td id="telefono2<?php echo $row_AdminUsuario['id_usuario'];?>"><?=$row_AdminUsuario['telefono2']?></td>
+                                        <td id="ciudad<?php echo $row_AdminUsuario['id_usuario'];?>"><?=$row_AdminUsuario['ciudad']?></td>
+                                        <td id="direccion<?php echo $row_AdminUsuario['id_usuario'];?>"><?=$row_AdminUsuario['direccion']?></td>
+                                        <td id="rol<?php echo $row_AdminUsuario['id_usuario'];?>"><?=$row_AdminUsuario['rol']?></td>
+                                        <td id="estado<?php echo $row_AdminUsuario['id_usuario'];?>"><?=$row_AdminUsuario['estado_des']?></td>
+                                        <td>
+                                            <button class='border-0 bg-transparent fa fa-pencil text-primary edit-modal' title="Editar" value="<?php echo $row_AdminUsuario['id_usuario']; ?>" />
+                                            <button class='border-0 bg-transparent fa fa-unlock text-success editPass' title="Password" value="<?php echo $row_AdminUsuario['id_usuario']; ?>" />
+                                            <?php
+                                                if($_SESSION['id_usuario'] != $row_AdminUsuario['id_usuario']){
+                                            ?>
+                                            <button class='border-0 bg-transparent fa fa-trash text-danger delete' title="Eliminar" value="<?php echo $row_AdminUsuario['id_usuario'];?>" />
+                                            <?php } ?>
+                                        </td>
+                                    </tr>
+                                    <?php } while ($row_AdminUsuario = mysqli_fetch_assoc($AdminUsuario)); ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  {% endblock %}

@@ -1,0 +1,91 @@
+<nav class="nav">
+    <img src="{{ url_for('static', filename= 'img/logo.png') }}" class="logo_daimler">
+    <ul class="list">
+
+        <li class="list__item list__item--click"">
+            <div class="list__button list__button--click">
+                <img src="{{ url_for('static', filename= 'img/dashboard.svg') }}" class="list__img">
+                <a href="{{ url_for('inicio') }}" class="nav__link">Inicio</a>
+                <img src="{{ url_for('static', filename= 'img/arrow.svg') }}" class="list__arrow">
+            </div>
+            <ul class="list__show">
+                <li class="list__inside">
+                    <a href="{{ url_for('logout') }}" class="nav__link nav__link--inside">Cerrar Sesion</a>
+                </li>
+            </ul>
+
+        </li>
+
+        <li class="list__item list__item--click">
+            <div class="list__button list__button--click">
+                <img src="{{ url_for('static', filename= 'img/docs.svg') }}" class="list__img">
+                <a href="#" class="nav__link">Productos</a>
+                <img src="{{ url_for('static', filename= 'img/arrow.svg') }}" class="list__arrow">
+            </div>
+
+            <ul class="list__show">
+                <li class="list__inside">
+                    <a href="{{ url_for('reg_producto') }}" class="nav__link nav__link--inside">Agregar Producto</a>
+                </li>
+                <li class="list__inside">
+                    <a href="{{ url_for('crud_productos') }}" class="nav__link nav__link--inside">Editar/Eliminar</a>
+                </li>
+            </ul>
+
+        </li>
+
+
+        <li class="list__item list__item--click">
+            <div class="list__button list__button--click">
+                <img src="{{ url_for('static', filename= 'img/stats.svg') }}" class="list__img">                        
+                <a href="#" class="nav__link">Proveedores</a>
+                <img src="{{ url_for('static', filename= 'img/arrow.svg') }}" class="list__arrow">                                                
+            </div>
+            <ul class="list__show">
+                <li class="list__inside">
+                    <a href="{{ url_for('reg_proveedor') }}" class="nav__link nav__link--inside">Agregar Proveedor</a>
+                </li>
+                <li class="list__inside">
+                    <a href="{{ url_for('crud_proveedor') }}" class="nav__link nav__link--inside">Editar/Eliminar</a>
+                </li>
+            </ul>
+
+        </li>
+
+        <li class="list__item list__item--click">
+            <div class="list__button list__button--click">
+                <img src="{{ url_for('static', filename= 'img/bell.svg') }}" class="list__img">
+                <a href="#" class="nav__link">Fabricantes</a>
+                <img src="{{ url_for('static', filename= 'img/arrow.svg') }}" class="list__arrow">
+            </div>
+
+            <ul class="list__show">
+                <li class="list__inside">
+                    <a href="{{ url_for('reg_fabricante') }}" class="nav__link nav__link--inside">Agregar Fabricante</a>
+                </li>
+                <li class="list__inside">
+                    <a href="{{ url_for('crud_fabricante') }}" class="nav__link nav__link--inside">Editar/Anular</a>
+                </li>
+            </ul>
+
+        </li>
+
+
+        <li class="list__item list__item--click">
+            <div class="list__button list__button--click">
+                <img src="{{ url_for('static', filename= 'img/message.svg') }}" class="list__img">
+                <a href="#" class="nav__link">Configuracion</a>
+                <img src="{{ url_for('static', filename= 'img/arrow.svg') }}" class="list__arrow">
+            </div>
+            <ul class="list__show">
+                <li class="list__inside">
+                    <a href="#" class="nav__link nav__link--inside">Agregar Usuario</a>
+                </li>
+                <li class="list__inside">
+                    <a href="#" class="nav__link nav__link--inside">Editar/Eliminar</a>
+                </li>
+            </ul>
+        </li>
+
+    </ul>
+</nav>

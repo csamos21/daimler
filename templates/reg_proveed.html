@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block cont_menu %}
+    <div>
+        <div id="contacto" class="form_menu">
+            <h2>INGRESAR PROVEEDORES</h2>
+            <div>
+                {% from "_macro.html" import render_field %}
+                <form class="formulario" name="ProveedoresForm" method="POST">
+                    <legend>Favor llenar todos los campos</legend>
+                    <div class="contenedor-campos">
+                        <div class="campo">
+                            {{ render_field(form.cod_prov) }}
+                        </div>
+                        <div class="campo">
+                            {{ render_field(form.tipoid_prov) }}
+                        </div>
+                        <div class="campo">
+                            {{ render_field(form.nroid_prov) }}
+                        </div>
+                        <div class="campo">
+                            {{ render_field(form.dv_nroid_prov) }}
+                        </div>
+                        <div class="campo">
+                            {{ render_field(form.rsocial_prov) }}
+                        </div>
+                        <div class="campo">
+                            {{ render_field(form.name_rep_prov) }}
+                        </div>
+                        <div class="campo">
+                            {{ render_field(form.name_con_prov) }}
+                        </div>
+                        <div class="campo">
+                            {{ render_field(form.email_prov) }}
+                        </div>
+                        <div class="campo">
+                            {{ render_field(form.codigo_pais) }}
+                        </div>
+                        <div class="campo">
+                            {{ render_field(form.ciudad) }}
+                        </div>
+                        <div class="campo">
+                            {{ render_field(form.direccion) }}
+                        </div>
+                        <div class="campo">
+                            {{ render_field(form.telefono) }}
+                        </div>
+                        <div class="campo">
+                            {{ render_field(form.celular) }}
+                        </div>
+                    </div>
+                    <div class="enviar">
+                        <input type="submit" value="Aceptar" class="boton" formaction="{{ url_for('reg_proveedor') }}">
+                        <input type="submit" value="Cancelar" class="boton" formnovalidate formaction="{{ url_for('inicio') }}">
+                    </div>    
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
